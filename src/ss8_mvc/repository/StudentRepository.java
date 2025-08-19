@@ -2,14 +2,19 @@ package ss8_mvc.repository;
 
 import ss8_mvc.entity.Student;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class StudentRepository implements IStudentRepository{
-    private static Student[] students = new Student[100];
+    private static List<Student> students = new LinkedList<>();
     static {
-        students[0]= new Student(1,"Chánh", 4.5f);
-        students[1]= new Student(2,"Nam", 8.5f);
+        students.add(new Student(1,"Chánh", 4.5f));
+        students.add(new Student(2,"Nam", 8.5f));
     }
+
     @Override
-    public Student[] findAll() {
+    public List<Student> findAll() {
         // code đọc file
         return students;
     }
@@ -17,12 +22,7 @@ public class StudentRepository implements IStudentRepository{
     @Override
     public boolean add(Student student) {
         // code ghi file
-        for (int i = 0; i <students.length ; i++) {
-            if (students[i]==null){
-                students[i]= student;
-                break;
-            }
-        }
+        students.add(student);
         return true;
     }
 }

@@ -2,7 +2,9 @@ package ss8_mvc.repository;
 
 import ss8_mvc.entity.Student;
 
+import java.util.List;
+
 public interface IStudentRepository {
-    Student[] findAll();
+    List<Student> findAll();
     boolean add(Student student);
 }

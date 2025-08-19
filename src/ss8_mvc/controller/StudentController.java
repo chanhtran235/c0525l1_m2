@@ -5,6 +5,7 @@ import ss8_mvc.service.IStudentService;
 import ss8_mvc.service.StudentService;
 import ss8_mvc.view.StudentView;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class StudentController {
@@ -26,7 +27,7 @@ public class StudentController {
             switch (choice) {
                 case 1:
                     System.out.println("Danh sách");
-                    Student[] studentList = studentService.findAll();
+                    List<Student> studentList = studentService.findAll();
                     StudentView.displayList(studentList);
                     break;
                 case 2:
