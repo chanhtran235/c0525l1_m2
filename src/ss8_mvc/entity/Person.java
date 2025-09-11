@@ -29,6 +29,8 @@ public  abstract   class Person {
         this.name = name;
     }
 
+    public abstract String getInfoToCSV();
+
     @Override
     public String toString() {
         return

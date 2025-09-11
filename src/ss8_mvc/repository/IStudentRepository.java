@@ -4,7 +4,6 @@ import ss8_mvc.entity.Student;
 
 import java.util.List;
 
-public interface IStudentRepository {
-    List<Student> findAll();
-    boolean add(Student student);
+public interface IStudentRepository extends IRepository<Student>{
+
 }

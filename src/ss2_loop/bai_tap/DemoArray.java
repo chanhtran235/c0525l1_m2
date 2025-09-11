@@ -6,10 +6,7 @@ import java.util.Scanner;
 public class DemoArray {
      static int age;
     public static void main(String[] args) {
-//        int i;
-//        i =10;
-//        System.out.println(i);
-//        System.out.println(age);
+
 
         int[] numbers = {10,20,30};
         String[] cars = new String[]{"Honda","Yamaha","VinFast"};
@@ -19,9 +16,12 @@ public class DemoArray {
 //        for (int i = 0; i <cars.length ; i++) {
 //           cars[i] +=" Hãng xe";
 //        }
+
+
         for(String car : cars){
            car += " Hãng xe";
         }
+
         System.out.println("----- dùng for thường duyệt mảng------");
         for (int i = 0; i <cars.length ; i++) {
             System.out.println(cars[i]);

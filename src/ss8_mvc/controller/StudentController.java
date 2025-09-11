@@ -41,8 +41,14 @@ public class StudentController {
                     }
                     break;
                 case 3:
-                    System.out.println("Xoá");
-                    // code mở rộng ở đây
+                    System.out.println("Nhập id muốn xoá");
+                     int deleteId = Integer.parseInt(scanner.nextLine());
+                     boolean check = studentService.deleteById(deleteId);
+                     if (check){
+                         System.out.println("Xoá thành công");
+                     }else {
+                         System.out.println("Xoá không thành công");
+                     }
                     break;
                 case 4:
                     System.out.println("Tìm kiếm");
