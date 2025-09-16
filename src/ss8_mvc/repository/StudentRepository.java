@@ -11,6 +11,7 @@ import java.util.List;
 public class StudentRepository implements IStudentRepository{
 
     private final String STUDENT_FILE ="src/ss8_mvc/data/student.csv";
+    private final String STUDENT_FILE_DAT ="src/ss8_mvc/data/student.dat";
     @Override
     public List<Student> findAll() {
         // code đọc file
@@ -29,6 +30,13 @@ public class StudentRepository implements IStudentRepository{
             System.out.println("đọc bị lỗi");
         }
 
+//        try {
+//            studentList = ReadAndWriteFile.readFileBinary(STUDENT_FILE_DAT);
+//        } catch (Exception e){
+//            System.out.println("lỗi ghi đọc file");
+//            e.printStackTrace();
+//        }
+
         return studentList;
     }
 
@@ -43,6 +51,19 @@ public class StudentRepository implements IStudentRepository{
             return false;
         }
         return true;
+        // sử dụng file nhị phân
+
+//        try {
+//            List<Student> studentList =ReadAndWriteFile.readFileBinary(STUDENT_FILE_DAT);
+//            studentList.add(student);
+//            ReadAndWriteFile.writeListStudent(STUDENT_FILE_DAT,studentList);
+//        } catch (IOException e) {
+//            System.out.println("Lỗi ghi file");
+//            return  false;
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        return  true;
     }
 
     @Override
@@ -62,6 +83,7 @@ public class StudentRepository implements IStudentRepository{
         for (int i = 0; i <studentList.size() ; i++) {
             stringList.add(studentList.get(i).getInfoToCSV());
         }
+
         try {
             ReadAndWriteFile.writeListStringToCSV(STUDENT_FILE,stringList, false);
         } catch (IOException e) {

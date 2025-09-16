@@ -1,15 +1,14 @@
 package ss8_mvc.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Student extends Person {
+public class Student extends Person implements Serializable{
     private float score;
 
     public Student(){
 
     }
-
-
 
     @Override
     public String getInfoToCSV() {

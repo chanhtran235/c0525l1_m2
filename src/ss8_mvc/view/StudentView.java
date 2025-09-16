@@ -1,6 +1,7 @@
 package ss8_mvc.view;
 
 import ss8_mvc.entity.Student;
+import ss8_mvc.util.CheckValidate;
 
 import java.util.List;
 import java.util.Scanner;
@@ -20,8 +21,13 @@ public class StudentView {
     public static Student inputDataForNewStudent(){
         System.out.println("Nhập id");
         int id = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhập tên");
-        String name = scanner.nextLine();
+        String name ="";
+        do {
+            System.out.println("Nhập tên");
+            name =scanner.nextLine();
+        }while (!CheckValidate.checkName(name));
+
+        // kiem tra xem co hop le hay khong
         System.out.println("Nhập điểm");
         float score = Float.parseFloat(scanner.nextLine());
         Student student = new Student(id,name,score);
